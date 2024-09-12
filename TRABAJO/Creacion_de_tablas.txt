@@ -1,0 +1,93 @@
+CREATE TABLE Usuario (
+                         id_usuario SERIAL PRIMARY KEY,
+                         nombre VARCHAR(100) NOT NULL,
+                         correo VARCHAR(100) UNIQUE NOT NULL,
+                         contraseña VARCHAR(100) NOT NULL,
+                         telefono VARCHAR(15),
+                         tipo_usuario VARCHAR(50) CHECK (tipo_usuario IN ('vendedor', 'comprador')) NOT NULL
+);
+
+CREATE TABLE Categoria (
+                           id_categoria SERIAL PRIMARY KEY,
+                           nombre VARCHAR(100) NOT NULL,
+                           descripcion TEXT
+);
+
+CREATE TABLE Producto (
+                          id_producto SERIAL PRIMARY KEY,
+                          id_usuario INT,
+                          FOREIGN KEY(id_usuario) REFERENCES Usuario(id_usuario),
+                          id_categoria INT,
+                          FOREIGN KEY (id_categoria)REFERENCES Categoria(id_categoria),
+                          nombre VARCHAR(100) NOT NULL,
+                          descripcion TEXT,
+                          precio DECIMAL(10, 2) NOT NULL,
+                          stock INT NOT NULL,
+                          imagen_url TEXT
+);
+
+CREATE TABLE Compra (
+                        id_compra SERIAL PRIMARY KEY,
+                        id_usuario INT,
+                        FOREIGN KEY (id_usuario)REFERENCES Usuario(id_usuario),
+                        fecha DATE,
+                        total DECIMAL(10, 2) NOT NULL,
+                        estado VARCHAR(50) CHECK (estado IN ('Pendiente', 'Completada', 'Cancelada')) NOT NULL
+);
+
+CREATE TABLE Carrito (
+                         id_carrito SERIAL PRIMARY KEY,
+                         id_usuario INT,
+                         FOREIGN KEY (id_usuario)REFERENCES Usuario(id_usuario),
+                         id_producto INT,
+                         FOREIGN KEY (id_producto)REFERENCES Producto(id_producto),
+                         cantidad INT NOT NULL CHECK (cantidad > 0)
+);
+
+CREATE TABLE Pago (
+                      id_pago SERIAL PRIMARY KEY,
+                      id_compra INT,
+                      FOREIGN KEY (id_compra)REFERENCES Compra(id_compra),
+                      metodo_pago VARCHAR(50) CHECK (metodo_pago IN ('tarjeta', 'efectivo')) NOT NULL,
+                      estado_pago VARCHAR(50) CHECK (estado_pago IN ('Pendiente', 'Completado', 'Fallido')) NOT NULL,
+                      fecha_pago TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Resena (
+                        id_resena SERIAL PRIMARY KEY,
+                        id_producto INT,
+                        FOREIGN KEY (id_producto)REFERENCES Producto(id_producto),
+                        id_usuario INT,
+                        FOREIGN KEY (id_usuario)REFERENCES Usuario(id_usuario),
+                        calificacion INT CHECK (calificacion BETWEEN 1 AND 5) NOT NULL,
+                        comentario TEXT,
+                        fecha_resena TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Favoritos (
+                           id_favorito SERIAL PRIMARY KEY,
+                           id_usuario INT,
+                           FOREIGN KEY (id_usuario)REFERENCES Usuario(id_usuario),
+                           id_producto INT,
+                           FOREIGN KEY (id_producto)REFERENCES Producto(id_producto)
+);
+
+CREATE TABLE Mensaje (
+                         id_mensaje SERIAL PRIMARY KEY,
+                         id_usuario_origen INT,
+                         FOREIGN KEY (id_usuario_origen)REFERENCES Usuario(id_usuario),
+                         id_usuario_destino INT,
+                         FOREIGN KEY (id_usuario_destino)REFERENCES Usuario(id_usuario),
+                         contenido TEXT NOT NULL,
+                         fecha_envio DATE
+);
+
+CREATE TABLE Direccion (
+                           id_direccion SERIAL PRIMARY KEY,
+                           id_usuario INT,
+                           FOREIGN KEY (id_usuario)REFERENCES Usuario(id_usuario),
+                           direccion TEXT NOT NULL,
+                           ciudad VARCHAR(100),
+                           departamento VARCHAR(100),
+                           codigo_postal VARCHAR(10)
+);

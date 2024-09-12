@@ -1,0 +1,240 @@
+-- Insertar datos en la tabla Usuario
+INSERT INTO Usuario (nombre, correo, contraseña, telefono, tipo_usuario)
+VALUES
+    ('Juan Pérez', 'juan.perez@example.com', 'contraseña123', '3001234567', 'vendedor'),
+    ('Ana Gómez', 'ana.gomez@example.com', 'contraseña456', '3002345678', 'comprador'),
+    ('Carlos Fernández', 'carlos.fernandez@example.com', 'contraseña789', '3003456789', 'vendedor'),
+    ('María Rodríguez', 'maria.rodriguez@example.com', 'contraseña012', '3004567890', 'comprador'),
+    ('Luis Martínez', 'luis.martinez@example.com', 'contraseña345', '3005678901', 'vendedor'),
+    ('Laura López', 'laura.lopez@example.com', 'contraseña678', '3006789012', 'comprador'),
+    ('Jorge Sánchez', 'jorge.sanchez@example.com', 'contraseña901', '3007890123', 'vendedor'),
+    ('Paola Herrera', 'paola.herrera@example.com', 'contraseña234', '3008901234', 'comprador'),
+    ('Ricardo Castro', 'ricardo.castro@example.com', 'contraseña567', '3009012345', 'vendedor'),
+    ('Sofía Morales', 'sofia.morales@example.com', 'contraseña890', '3000123456', 'comprador'),
+    ('Pedro Ramírez', 'pedro.ramirez@example.com', 'contraseña1234', '3001234568', 'vendedor'),
+    ('Catalina Torres', 'catalina.torres@example.com', 'contraseña4567', '3002345679', 'comprador'),
+    ('Felipe Vargas', 'felipe.vargas@example.com', 'contraseña7890', '3003456780', 'vendedor'),
+    ('Isabella Gómez', 'isabella.gomez@example.com', 'contraseña0123', '3004567891', 'comprador'),
+    ('Andrés Martínez', 'andres.martinez@example.com', 'contraseña3456', '3005678902', 'vendedor'),
+    ('Natalia Romero', 'natalia.romero@example.com', 'contraseña6789', '3006789013', 'comprador'),
+    ('Emilio Díaz', 'emilio.diaz@example.com', 'contraseña9012', '3007890124', 'vendedor'),
+    ('Daniela Castillo', 'daniela.castillo@example.com', 'contraseña2345', '3008901235', 'comprador'),
+    ('Javier Moreno', 'javier.moreno@example.com', 'contraseña5678', '3009012346', 'vendedor'),
+    ('Valentina Cruz', 'valentina.cruz@example.com', 'contraseña8901', '3000123457', 'comprador'),
+    ('Andrés Pérez', 'andres.perez@example.com', 'contraseña12345', '3001234569', 'vendedor');
+
+-- Insertar datos en la tabla Categoria
+INSERT INTO Categoria (nombre, descripcion)
+VALUES
+    ('Electrónica', 'Dispositivos electrónicos y gadgets.'),
+    ('Ropa', 'Ropa y accesorios para todos los géneros.'),
+    ('Hogar', 'Artículos y muebles para el hogar.'),
+    ('Juguetes', 'Juguetes y juegos para niños.'),
+    ('Deportes', 'Equipos y accesorios deportivos.'),
+    ('Libros', 'Libros de diferentes géneros y categorías.'),
+    ('Belleza', 'Productos de belleza y cuidado personal.'),
+    ('Jardinería', 'Herramientas y productos para jardinería.'),
+    ('Automotriz', 'Accesorios y piezas para vehículos.'),
+    ('Salud', 'Productos para el bienestar y la salud.'),
+    ('Tecnología', 'Últimos avances en tecnología.'),
+    ('Relojes', 'Relojes y accesorios de tiempo.'),
+    ('Electrodomésticos', 'Electrodomésticos para el hogar.'),
+    ('Música', 'Instrumentos y accesorios musicales.'),
+    ('Cine', 'Películas y productos relacionados.'),
+    ('Fotografía', 'Cámaras y accesorios de fotografía.'),
+    ('Viajes', 'Equipos y accesorios para viajar.'),
+    ('Cómics', 'Cómics y novelas gráficas.'),
+    ('Coleccionables', 'Artículos coleccionables y raros.'),
+    ('Artesanía', 'Productos hechos a mano y artesanales.');
+
+-- Insertar datos en la tabla Producto
+INSERT INTO Producto (id_usuario, id_categoria, nombre, descripcion, precio, stock, imagen_url)
+VALUES
+    (1, 1, 'Smartphone XYZ', 'Smartphone de última generación.', 699.99, 50, 'http://example.com/img/smartphone.jpg'),
+    (2, 2, 'Camisa de algodón', 'Camisa cómoda y elegante.', 29.99, 100, 'http://example.com/img/camisa.jpg'),
+    (3, 3, 'Sofá de cuero', 'Sofá grande y cómodo.', 499.99, 20, 'http://example.com/img/sofa.jpg'),
+    (4, 4, 'Muñeca de trapo', 'Muñeca suave y amigable.', 15.99, 200, 'http://example.com/img/muneca.jpg'),
+    (5, 5, 'Raqueta de tenis', 'Raqueta profesional de tenis.', 89.99, 30, 'http://example.com/img/raqueta.jpg'),
+    (6, 6, 'Novela de ciencia ficción', 'Una novela emocionante.', 19.99, 150, 'http://example.com/img/libro.jpg'),
+    (7, 7, 'Crema facial', 'Crema hidratante para el rostro.', 24.99, 80, 'http://example.com/img/crema.jpg'),
+    (8, 8, 'Maceta de jardín', 'Maceta de cerámica para plantas.', 12.99, 60, 'http://example.com/img/maceta.jpg'),
+    (9, 9, 'Cubierta de volante', 'Cubierta de volante para vehículos.', 22.99, 40, 'http://example.com/img/cubierta.jpg'),
+    (10, 10, 'Vitaminas multivitamínicas', 'Suplemento de vitaminas.', 14.99, 100, 'http://example.com/img/vitaminas.jpg'),
+    (11, 11, 'Auriculares Bluetooth', 'Auriculares inalámbricos.', 89.99, 75, 'http://example.com/img/auriculares.jpg'),
+    (12, 12, 'Reloj digital', 'Reloj con pantalla digital.', 49.99, 45, 'http://example.com/img/reloj.jpg'),
+    (13, 13, 'Nevera compacta', 'Nevera pequeña y eficiente.', 299.99, 25, 'http://example.com/img/nevera.jpg'),
+    (14, 14, 'Guitarra acústica', 'Guitarra de buena calidad.', 129.99, 15, 'http://example.com/img/guitarra.jpg'),
+    (15, 15, 'DVD de película', 'Película en formato DVD.', 9.99, 300, 'http://example.com/img/dvd.jpg'),
+    (16, 16, 'Cámara DSLR', 'Cámara profesional para fotografía.', 799.99, 10, 'http://example.com/img/camara.jpg'),
+    (17, 17, 'Maleta de viaje', 'Maleta duradera y espaciosa.', 119.99, 40, 'http://example.com/img/maleta.jpg'),
+    (18, 18, 'Cómic de superhéroes', 'Cómic de aventuras de superhéroes.', 8.99, 250, 'http://example.com/img/comic.jpg'),
+    (19, 19, 'Figura coleccionable', 'Figura limitada y coleccionable.', 49.99, 30, 'http://example.com/img/figura.jpg'),
+    (20, 20, 'Cuadro pintado a mano', 'Cuadro artístico de gran calidad.', 159.99, 5, 'http://example.com/img/cuadro.jpg');
+
+-- Insertar datos en la tabla Compra
+INSERT INTO Compra (id_usuario, fecha, total, estado)
+VALUES
+    (1, '2024-08-01', 719.98, 'Pendiente'),
+    (2, '2024-08-02', 29.99, 'Completada'),
+    (3, '2024-08-03', 499.99, 'Cancelada'),
+    (4, '2024-08-04', 15.99, 'Pendiente'),
+    (5, '2024-08-05', 89.99, 'Completada'),
+    (6, '2024-08-06', 19.99, 'Cancelada'),
+    (7, '2024-08-07', 24.99, 'Pendiente'),
+    (8, '2024-08-08', 12.99, 'Completada'),
+    (9, '2024-08-09', 22.99, 'Cancelada'),
+    (10, '2024-08-10', 14.99, 'Pendiente'),
+    (11, '2024-08-11', 89.99, 'Completada'),
+    (12, '2024-08-12', 49.99, 'Cancelada'),
+    (13, '2024-08-13', 299.99, 'Pendiente'),
+    (14, '2024-08-14', 129.99, 'Completada'),
+    (15, '2024-08-15', 9.99, 'Cancelada'),
+    (16, '2024-08-16', 799.99, 'Pendiente'),
+    (17, '2024-08-17', 119.99, 'Completada'),
+    (18, '2024-08-18', 8.99, 'Cancelada'),
+    (19, '2024-08-19', 49.99, 'Pendiente'),
+    (20, '2024-08-20', 159.99, 'Completada');
+
+-- Insertar datos en la tabla Carrito
+INSERT INTO Carrito (id_usuario, id_producto, cantidad)
+VALUES
+    (1, 1, 1),
+    (2, 2, 2),
+    (3, 3, 1),
+    (4, 4, 3),
+    (5, 5, 1),
+    (6, 6, 2),
+    (7, 7, 1),
+    (8, 8, 2),
+    (9, 9, 1),
+    (10, 10, 1),
+    (11, 11, 2),
+    (12, 12, 1),
+    (13, 13, 1),
+    (14, 14, 1),
+    (15, 15, 3),
+    (16, 16, 1),
+    (17, 17, 1),
+    (18, 18, 2),
+    (19, 19, 1),
+    (20, 20, 1);
+
+-- Insertar datos en la tabla Pago
+INSERT INTO Pago (id_compra, metodo_pago, estado_pago)
+VALUES
+    (1, 'tarjeta', 'Pendiente'),
+    (2, 'efectivo', 'Completado'),
+    (3, 'tarjeta', 'Fallido'),
+    (4, 'efectivo', 'Pendiente'),
+    (5, 'tarjeta', 'Completado'),
+    (6, 'efectivo', 'Fallido'),
+    (7, 'tarjeta', 'Pendiente'),
+    (8, 'efectivo', 'Completado'),
+    (9, 'tarjeta', 'Fallido'),
+    (10, 'efectivo', 'Pendiente'),
+    (11, 'tarjeta', 'Completado'),
+    (12, 'efectivo', 'Fallido'),
+    (13, 'tarjeta', 'Pendiente'),
+    (14, 'efectivo', 'Completado'),
+    (15, 'tarjeta', 'Fallido'),
+    (16, 'efectivo', 'Pendiente'),
+    (17, 'tarjeta', 'Completado'),
+    (18, 'efectivo', 'Fallido'),
+    (19, 'tarjeta', 'Pendiente'),
+    (20, 'efectivo', 'Completado');
+
+-- Insertar datos en la tabla Resena
+INSERT INTO Resena (id_producto, id_usuario, calificacion, comentario)
+VALUES
+    (1, 1, 5, 'Excelente producto, muy recomendable.'),
+    (2, 2, 4, 'Buena calidad, pero un poco caro.'),
+    (3, 3, 3, 'El sofá es cómodo, pero llegó tarde.'),
+    (4, 4, 5, 'Mi hija adora esta muñeca.'),
+    (5, 5, 4, 'Buena raqueta, aunque podría ser más ligera.'),
+    (6, 6, 5, 'Muy buen libro, lo disfruté mucho.'),
+    (7, 7, 4, 'Crema efectiva, aunque el envase podría ser mejor.'),
+    (8, 8, 5, 'Ideal para mis plantas.'),
+    (9, 9, 3, 'Cumple su función, pero el diseño podría mejorar.'),
+    (10, 10, 5, 'Gran suplemento, lo recomiendo.'),
+    (11, 11, 4, 'Sonido excelente, aunque la batería dura poco.'),
+    (12, 12, 5, 'Muy buen reloj, fácil de usar.'),
+    (13, 13, 3, 'La nevera funciona bien, pero el ruido es molesto.'),
+    (14, 14, 4, 'Buena guitarra para principiantes.'),
+    (15, 15, 2, 'La película no era lo que esperaba.'),
+    (16, 16, 5, 'Perfecta para mis necesidades de fotografía.'),
+    (17, 17, 4, 'Espaciosa y duradera, ideal para viajes.'),
+    (18, 18, 5, 'Un cómic entretenido, con una gran historia.'),
+    (19, 19, 5, 'Figura muy bien hecha, excelente para coleccionistas.'),
+    (20, 20, 4, 'El cuadro es bonito, pero llegó con un pequeño rasguño.');
+
+-- Insertar datos en la tabla Favoritos
+INSERT INTO Favoritos (id_usuario, id_producto)
+VALUES
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5),
+    (6, 6),
+    (7, 7),
+    (8, 8),
+    (9, 9),
+    (10, 10),
+    (11, 11),
+    (12, 12),
+    (13, 13),
+    (14, 14),
+    (15, 15),
+    (16, 16),
+    (17, 17),
+    (18, 18),
+    (19, 19),
+    (20, 20);
+
+-- Insertar datos en la tabla Mensaje
+INSERT INTO Mensaje (id_usuario_origen, id_usuario_destino, contenido, fecha_envio)
+VALUES
+    (1, 2, 'Hola, ¿estás interesado en el producto?', '2024-08-01'),
+    (2, 3, 'Gracias por tu compra, ¿cómo te fue?', '2024-08-02'),
+    (3, 4, 'Tu pedido está en camino.', '2024-08-03'),
+    (4, 5, 'Tu reseña ha sido publicada.', '2024-08-04'),
+    (5, 6, 'Confirmamos tu pago.', '2024-08-05'),
+    (6, 7, 'El producto está agotado.', '2024-08-06'),
+    (7, 8, 'Gracias por tu paciencia.', '2024-08-07'),
+    (8, 9, 'Tu pedido ha sido enviado.', '2024-08-08'),
+    (9, 10, 'Estamos preparando tu compra.', '2024-08-09'),
+    (10, 11, 'Tu carrito ha sido actualizado.', '2024-08-10'),
+    (11, 12, 'Gracias por tu reseña.', '2024-08-11'),
+    (12, 13, 'Tu cuenta ha sido actualizada.', '2024-08-12'),
+    (13, 14, 'Tu compra ha sido cancelada.', '2024-08-13'),
+    (14, 15, 'El artículo está en oferta.', '2024-08-14'),
+    (15, 16, '¿Necesitas ayuda con tu pedido?', '2024-08-15'),
+    (16, 17, 'El envío se ha retrasado.', '2024-08-16'),
+    (17, 18, 'Tu reseña ha sido aprobada.', '2024-08-17'),
+    (18, 19, 'Tu producto ha llegado.', '2024-08-18'),
+    (19, 20, 'Tu pago ha sido procesado.', '2024-08-19'),
+    (20, 1, 'Gracias por tu interés.', '2024-08-20');
+
+-- Insertar datos en la tabla Direccion
+INSERT INTO Direccion (id_usuario, direccion, ciudad, departamento, codigo_postal)
+VALUES
+    (1, 'Carrera 10 #15-20', 'Medellín', 'Antioquia', '050001'),
+    (2, 'Avenida 80 #45-67', 'Medellín', 'Antioquia', '050002'),
+    (3, 'Calle 33 #10-15', 'Medellín', 'Antioquia', '050003'),
+    (4, 'Transversal 5 #20-30', 'Medellín', 'Antioquia', '050004'),
+    (5, 'Carrera 50 #70-90', 'Medellín', 'Antioquia', '050005'),
+    (6, 'Calle 45 #30-50', 'Medellín', 'Antioquia', '050006'),
+    (7, 'Avenida 70 #20-40', 'Medellín', 'Antioquia', '050007'),
+    (8, 'Calle 12 #45-67', 'Medellín', 'Antioquia', '050008'),
+    (9, 'Carrera 30 #10-12', 'Medellín', 'Antioquia', '050009'),
+    (10, 'Avenida 33 #60-80', 'Medellín', 'Antioquia', '050010'),
+    (11, 'Calle 22 #40-60', 'Medellín', 'Antioquia', '050011'),
+    (12, 'Transversal 8 #15-25', 'Medellín', 'Antioquia', '050012'),
+    (13, 'Carrera 20 #10-30', 'Medellín', 'Antioquia', '050013'),
+    (14, 'Calle 10 #70-90', 'Medellín', 'Antioquia', '050014'),
+    (15, 'Avenida 55 #10-25', 'Medellín', 'Antioquia', '050015'),
+    (16, 'Calle 5 #35-50', 'Medellín', 'Antioquia', '050016'),
+    (17, 'Carrera 60 #20-40', 'Medellín', 'Antioquia', '050017'),
+    (18, 'Avenida 90 #50-70', 'Medellín', 'Antioquia', '050018'),
+    (19, 'Calle 35 #25-45', 'Medellín', 'Antioquia', '050019'),
+    (20, 'Transversal 7 #10-20', 'Medellín', 'Antioquia', '050020');

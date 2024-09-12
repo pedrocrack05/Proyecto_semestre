@@ -1,0 +1,92 @@
+--Consultas simples
+
+--1)
+--Obtener el nombre y el precio de todos los productos que tienen más de 50 unidades en stock
+SELECT nombre, precio
+FROM Producto
+WHERE stock > 50;
+
+--2)
+--Obtener el nombre y precio de todos los productos
+SELECT nombre, precio FROM Producto;
+
+--3)
+--Obtener todas las compras completadas
+SELECT * FROM Compra WHERE estado = 'Completada';
+
+--4)
+--Obtener todas las reseñas con calificación máxima (5)
+SELECT * FROM Resena WHERE calificacion = 5;
+
+--5)
+--Obtener los productos con stock mayor a 50
+SELECT * FROM Producto WHERE stock > 50;
+
+--6)
+--Obtener todos los productos favoritos de un usuario
+SELECT * FROM Favoritos WHERE id_usuario = 1;
+
+--7)
+--Obtener todas las categorías
+SELECT * FROM Categoria;
+
+--8)
+--Obtener todos los pagos pendientes
+SELECT * FROM Pago WHERE estado_pago = 'Pendiente';
+
+--Consultas Compuestas
+
+--1)
+--Obtener los productos junto con sus respectivas categorías
+SELECT Producto.nombre, Categoria.nombre AS categoria
+FROM Producto
+         JOIN Categoria ON Producto.id_categoria = Categoria.id_categoria;
+
+--2)
+--Obtener las compras realizadas por un usuario
+SELECT Compra.*, Usuario.nombre
+FROM Compra
+         JOIN Usuario ON Compra.id_usuario = Usuario.id_usuario
+WHERE Usuario.id_usuario = 1;
+
+--3)
+--Obtener todas las reseñas y el nombre del producto al que pertenecen
+SELECT Resena.*, Producto.nombre AS producto
+FROM Resena
+         JOIN Producto ON Resena.id_producto = Producto.id_producto;
+
+--4)
+--Obtener los usuarios que han hecho una compra y el total de sus compras
+SELECT Usuario.nombre, SUM(Compra.total) AS total_compras
+FROM Usuario
+         JOIN Compra ON Usuario.id_usuario = Compra.id_usuario
+GROUP BY Usuario.nombre;
+
+--5)
+--Obtener las compras y los productos asociados a un usuario
+SELECT Compra.id_compra, Producto.nombre, Carrito.cantidad
+FROM Compra
+         JOIN Carrito ON Compra.id_usuario = Carrito.id_usuario
+         JOIN Producto ON Carrito.id_producto = Producto.id_producto
+WHERE Compra.id_usuario = 2;
+
+--6)
+--Obtener el contenido de mensajes entre dos usuarios
+SELECT Mensaje.contenido
+FROM Mensaje
+WHERE id_usuario_origen = 1 AND id_usuario_destino = 2;
+
+
+--7)
+--Obtener los productos que tienen reseñas con una calificación mayor a 4
+SELECT Producto.nombre, Resena.calificacion
+FROM Producto
+         JOIN Resena ON Producto.id_producto = Resena.id_producto
+WHERE Resena.calificacion > 4;
+
+--8)
+--Obtener los pagos completados junto con la información de la compra
+SELECT Pago.*, Compra.fecha, Compra.total
+FROM Pago
+         JOIN Compra ON Pago.id_compra = Compra.id_compra
+WHERE Pago.estado_pago='Completado';
